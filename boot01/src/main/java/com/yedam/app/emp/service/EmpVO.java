@@ -2,6 +2,8 @@ package com.yedam.app.emp.service;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 
@@ -12,5 +14,6 @@ public class EmpVO {
 	private int mgr;
 	private double sal;
 	private int deptid;
-	private Date hiredate;
+	@DateTimeFormat(pattern="yyyy-mkm-dd")
+	private Date hiredate; 
 }
