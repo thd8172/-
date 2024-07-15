@@ -1,4 +1,4 @@
-package com.yedam.app.dep.service.impl;
+package com.yedam.app.dep.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yedam.app.dep.mapper.DepMapper;
-import com.yedam.app.dep.service.DepService;
-import com.yedam.app.dep.service.DepVO;
 
 @Service
 public class DepServiceImpl implements DepService{

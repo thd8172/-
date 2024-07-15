@@ -19,7 +19,7 @@ public class DmpController {
 	DepService depService;
 	
 	//전체조회
-	@GetMapping("empList")
+	@GetMapping("deptList")
 	public String depList(Model model) {
 		List<DepVO> list = depService.depList();
 		

@@ -14,17 +14,17 @@ public class EmpServiceImpl implements EmpService{
 	@Autowired //필드 주입 
 	EmpMapper empMapper;
 	
-
+ //전체조회
 	@Override
 	public List<EmpVO> empList() {
 		return empMapper.selectEmpAll();
 	}
-
+//조회
 	@Override
 	public EmpVO empInfo(EmpVO empVO) {
 		return empMapper.selectEmpInfo(empVO);
 	}
-
+//
 	@Override
 	public int empInsert(EmpVO empVO) {
 		int result = empMapper.insertEmpInfo(empVO);
