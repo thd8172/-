@@ -40,11 +40,12 @@ public class EmpController {
 		
 	}
 	// 단건조회
-	@GetMapping("meinFo")// 커맨드 객체 => application/x=www-form-
+	@GetMapping("empinfo")// 커맨드 객체 => application/x=www-form-
 	public String empInfo(EmpVO empVO,Model model) {
 		EmpVO findVO  = empService.empInfo(empVO);
 		model.addAttribute("empInfo", findVO);
 		return "emp/info";
+		//classpath:/templates/emp/info.html
 	}
 	// 등록 -페이지요청
 	@GetMapping("empInsert")
@@ -58,14 +59,14 @@ public class EmpController {
 		String url = null;
 		if ( eid > -1) {
 			//정상적으로 등록된 경우
-			url = "redirect:empInfo?empid=" + eid; 
+			url = "redirect:empinfo?empid=" + eid; 
 		}else {
 			url = "redirect:empList";
 		}
 		return url;
 	}
 	
-	// 수정 -페이지요청
+	// 수정 - 페이지요청
 	@GetMapping("empUpdate")
 	public String empUpdateForm(@RequestParam Integer empid,Model model) {
 		EmpVO empVO  = new EmpVO();
@@ -78,13 +79,13 @@ public class EmpController {
 	}
 	
 	// 수정 -처리(연산 AJAX, => queryString)
-	@PostMapping("empUpdate")
+	//@PostMapping("empUpdate")
 	@ResponseBody // 페이지를 검색하지않고 공간에 그대로 적용
 	public Map<String, Object> empUpdateAJAXQueryString(EmpVO empVO){
 		return empService.empUpdate(empVO);
 	}
 	// 수정 -처리(연산 AJSA  => JSON : @RequestBody)
-	//@PostMapping("empUpdate")
+	@PostMapping("empUpdate")
 	@ResponseBody // 페이지를 검색하지않고 공간에 그대로 적용
 	public Map<String, Object> empUpdateAJAXJSON(@RequestBody EmpVO empVO){
 		return empService.empUpdate(empVO);

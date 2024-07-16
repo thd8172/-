@@ -13,7 +13,7 @@ public class EmpVO {
 	private String empname;
 	private int mgr;
 	private double sal;
-	private int deptid;
-	@DateTimeFormat(pattern="yyyy-mkm-dd")
+	private Integer deptid;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date hiredate; 
 }
